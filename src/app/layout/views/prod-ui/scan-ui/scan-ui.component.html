@@ -1,0 +1,94 @@
+<div class= row><button type="submit" mat-button (click)='closeDialog()' class="btn btn-primary pull-right">X</button></div>
+<div class='row'>
+    <div class="control-section">
+        <ejs-grid #grid id='grid' [dataSource]='process' [formGroup]="TypeMasterForm" [editSettings]="editSettings"
+            (actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+            <e-columns>
+                <e-column field='Process' headerText='Process' textAlign='Left'></e-column>
+                <e-column field='User' headerText='User' textAlign='Left'></e-column>
+            </e-columns>
+            <ng-template #editSettingsTemplate let-data>
+                <div [formGroup]="ProcessMasterForm">
+                    <table class="e-table e-inline-edit" cellspacing="0.25">
+                        <tbody>
+                            <tr>
+                                <td class='e-rowcell'>
+                                    <input class="e-input e-field" formControlName="Process" type="text" name='Process'
+                                        style="text-align: right" readonly>
+                                </td>
+                                <td class='e-rowcell'>
+                                    <ejs-dropdownlist id="User" name="User" formControlName="User"
+                                        [dataSource]='userData' [fields]="{text: 'UserName', value: 'UserName' }"
+                                        popupHeight='300px' floatLabelType='Never'>
+                                    </ejs-dropdownlist>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ng-template>
+        </ejs-grid>
+    </div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="row">
+    <div class="col-sm-6 b-r">
+        <form [formGroup]="TypeMasterForm">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">LampCode:*</label>
+                <div class="col-sm-6">
+                    <input class="form-control m-b" placeholder='DriverCode' formControlName='DriverCode'
+                        [ngClass]="{'has-error': TypeMasterForm.get('DriverCode').invalid && ( TypeMasterForm.get('DriverCode').dirty || TypeMasterForm.get('DriverCode').touched
+                    ), 'has-success': !TypeMasterForm.get('DriverCode').invalid && ( TypeMasterForm.get('DriverCode').dirty || TypeMasterForm.get('DriverCode').touched)}">
+                    <div
+                        *ngIf="TypeMasterForm.get('DriverCode').invalid && ( TypeMasterForm.get('DriverCode').dirty || TypeMasterForm.get('DriverCode').touched )">
+                        <p *ngIf="TypeMasterForm.get('DriverCode').hasError('maxlength')">
+                            * Length of code should be not more than max code Length</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form [formGroup]="TypeMasterForm">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">DriverCode:*</label>
+                <div class="col-sm-6">
+                    <input class="form-control m-b" placeholder='LampCode' formControlName='LampCode'
+                        [ngClass]="{'has-error': TypeMasterForm.get('LampCode').invalid && ( TypeMasterForm.get('LampCode').dirty || TypeMasterForm.get('LampCode').touched
+                    ), 'has-success': !TypeMasterForm.get('LampCode').invalid && ( TypeMasterForm.get('LampCode').dirty || TypeMasterForm.get('LampCode').touched)}">
+                    <div
+                        *ngIf="TypeMasterForm.get('LampCode').invalid && ( TypeMasterForm.get('LampCode').dirty || TypeMasterForm.get('LampCode').touched )">
+                        <p *ngIf="TypeMasterForm.get('LampCode').hasError('maxlength')">
+                            * Length of code should be not more than max code Length</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-6 b-r">
+        <form [formGroup]="TypeMasterForm">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Voltage:*</label>
+                <div class="col-sm-6">
+                    <input class="form-control m-b" placeholder='Voltage' formControlName='Voltage'>
+                </div>
+            </div>
+        </form>
+        <form [formGroup]="TypeMasterForm">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Current:*</label>
+                <div class="col-sm-6">
+                    <input class="form-control m-b" placeholder='Current' formControlName='Current'>
+                </div>
+            </div>
+        </form>
+        <form [formGroup]="TypeMasterForm">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Power:*</label>
+                <div class="col-sm-6">
+                    <input class="form-control m-b" placeholder='Power' formControlName='Power'>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<button type="submit" (click)='onCreate()' class="btn btn-primary block m-b">Submit</button>

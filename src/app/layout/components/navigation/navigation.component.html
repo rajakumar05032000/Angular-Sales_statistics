@@ -1,0 +1,49 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="profile-element" dropdown>
+          <img alt="image" class="img-circle" src="assets/images/profile_small.jpg">
+          <a dropdownToggle>
+            <span class="block m-t-xs">
+              <strong class="font-bold">VimalAnanth</strong>
+            </span>
+            <span class="text-muted text-xs block">Software Development Engr.
+              <b class="caret"></b>
+            </span>
+          </a>
+          <ul class="animated fadeInRight dropdown-menu" *dropdownMenu>
+            <li>
+              <a href="">Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          ILT
+        </div>
+      </li>
+
+      <li [ngClass]="{active: activeRoute('')}">
+        <a href="">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="nav-label">Production</span>
+        </a>
+        <ul class="nav nav-second-level collapse" [ngClass]="{in: activeRoute('')}">
+          <li [ngClass]="{active: activeRoute('grid')}">
+            <a [routerLink]="['/grid']">LogsGrid</a>
+          </li>
+          <li [ngClass]="{active: activeRoute('usergrid')}">
+            <a [routerLink]="['/usergrid']">UserMaster</a>
+          </li>
+          <li [ngClass]="{active: activeRoute('processgrid')}">
+            <a [routerLink]="['/processgrid']">ProcessMaster</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

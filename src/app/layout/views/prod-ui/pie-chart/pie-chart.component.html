@@ -1,0 +1,17 @@
+<div class="card ">
+  <div class="card-header ">
+    <h5 class="card-title">Current Statistics</h5>
+    <p class="card-category">On / Off</p>
+  </div>
+     <div class="chart-wrapper">
+    <canvas baseChart
+    [data]="doughnutChartData"
+    [labels]="doughnutChartLabels"
+    [chartType]="doughnutChartType"
+    [colors] = "doughnutChartColors"
+    >
+
+  </canvas>
+</div>
+</div>
+

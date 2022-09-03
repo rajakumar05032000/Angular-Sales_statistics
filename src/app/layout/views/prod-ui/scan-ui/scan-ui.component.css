@@ -1,0 +1,21 @@
+.row{
+    margin-left: -10px;
+    }
+    
+.has-error{
+        border-color: #ed5565;
+        color: #ed5565 ;
+    }
+
+.has-success{
+         border-color: #1ab394;
+         color: #1ab394;
+     }
+     .btn1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        line-height: 14px;
+        min-width: auto;
+      }

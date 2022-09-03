@@ -1,0 +1,7 @@
+{
+      "/api/*": {
+        "target": "https://data.mongodb-api.com/app/data-ypill/endpoint/data/beta/action/find",
+        "secure": false,
+        "changeOrigin": true
+      }
+}

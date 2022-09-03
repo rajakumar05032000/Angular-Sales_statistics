@@ -1,0 +1,143 @@
+/* Color Pallete */
+
+$blue: #007bff;
+$blue-light: #007bff10;
+$blue-hover: #007bff30;
+$blue-light-opaque: #eff7ff;
+$blue-mid: #007bff99;
+$pblue: #4c75f2;
+$pblue-light: #05144110;
+$pblue-hover: #4c75f24c;
+$pblue-light-opaque: #eff7ff;
+$pblue-mid: #4c75f299;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$cherry: #fd0637;
+$cherry-mid: #ff073982;
+$cherry-light: #ff073928;
+$cherry-hover: #ff073945;
+$cherry-light-opaque: #ffe0e6;
+$red: #dc3545;
+$red-light: #dc354520;
+$red-mid: #dc354599;
+$orange: #f98103;
+$orange-mid: #f9810399;
+$orange-light: #f9810320;
+$orange-hover: #f982037b;
+$orange-light-opaque: #ffefe2;
+$yellow: #ffc107;
+$yellow-light: #ffc10720;
+$yellow-hover: #ffc10749;
+$yellow-mid: #ffc10799;
+$yellow-light-opaque: #fff7e0;
+$green: #1ddd4a;
+$green-light: #28a74520;
+$green-hover: #28a74649;
+$green-mid: #28a74599;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-light: #6c757d10;
+$gray-light-opaque: #f6f6f7;
+$gray-hover: #6c757d20;
+$gray-mid: #6c757d99;
+$gray-dark: #343a40;
+$gray-opaque: #f1f1f1;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$purple: #201aa2dd;
+$purple-light: #201aa220;
+$purple-hover: #201aa230;
+$purple-mid: #201aa299;
+$purple-light-opaque: #e3e2f3;
+$pink: #fb3d70;
+$pink-light: #ffa8cb5e;
+$pink-hover: #ffa8cba1;
+$pink-mid: #ffa8cb99;
+
+
+.patient-card {
+  width: 10rem;
+  height: 10rem;
+  background: "assets/images/profile_small.jpg";
+  margin: 0.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: background 0.3s ease-in-out;
+  & > * {
+    align-self: center;
+  }
+
+  &:hover {
+    background: $gray-hover;
+  }
+
+  h3 {
+    font-weight: 900;
+    color: $gray-mid;
+    font-size: 11px !important;
+  }
+}
+
+.Patients {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  align-self: center;
+  padding-left: 300px;
+  padding-right: 300px;
+
+
+  & > * {
+    align-self: center;
+  }
+
+  h5.daylabel {
+    color: $pblue;
+  }
+
+  .day {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .patient-card {
+    width: 12rem;
+    height: 12rem;
+    background-image: url(../../../../../assets/styles1/patterns/header-profile-skin-1.png);
+    margin: 0.25rem;
+    opacity: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: background 0.3s ease-in-out;
+    & > * {
+      align-self: center;
+    }
+
+    &:hover {
+      background: $blue-hover;
+    }
+
+    h3 {
+      font-weight: 1300;
+      color: $white;
+      font-size: 16px !important;
+    }
+  }
+}

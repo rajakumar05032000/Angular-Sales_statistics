@@ -1,0 +1,54 @@
+<div class="container mt-5">
+
+
+  <div class="row">
+    <div class="col-md-5">
+      <app-pie-chart></app-pie-chart>
+      </div>
+      <div class="col-md-5">
+        <app-line-chart> </app-line-chart>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+      <app-bar-chart></app-bar-chart>
+    </div>
+    <div class="col-md-5">
+      <app-mapz></app-mapz>
+    </div>
+   
+
+          </div>
+
+  <h2>Lamp Status Information</h2>
+  <ejs-grid #grid [dataSource]='data' height=500 [toolbar]='toolbarOptions' [showColumnChooser]='true'
+  [allowPaging]="true" [allowSorting]="true" [allowFiltering]="true" [allowGrouping]="true"
+  [pageSettings]='pageSettings' (dataBound)='dataBound()' [allowResizing]='true' (toolbarClick)='toolbarClick($event)'>
+    <e-columns>
+      <e-column field='Date' headerText='Date' textAlign='center'></e-column>
+      <e-column field='Zone' headerText='Zone' textAlign='center'></e-column>
+      <e-column field='Sc_no' headerText='Sc_no' textAlign='center'></e-column>
+      <e-column field='Phone_no' headerText='Phone_no Code' textAlign='center'></e-column>
+      <e-column field='UID' headerText='UID' textAlign='center'></e-column>
+      <e-column field='Location' headerText='Location' textAlign='center'></e-column>
+      <e-column field='Operated_time' headerText='Operated_time' textAlign='center'></e-column>
+      <e-column field='Column9' headerText='Column9' textAlign='center'></e-column>
+      <e-column field='Column10' headerText='Column10' textAlign='center'></e-column>
+      <e-column field='Burn_load' headerText='Burn_load' textAlign='center'></e-column>
+      <e-column field='Base_load' headerText='Base_load' textAlign='center'></e-column>
+      <e-column field='correction_factor' headerText='correction_factor' textAlign='center'></e-column>
+      <e-column field='baseline' headerText='baseline' textAlign='center'></e-column>
+      <e-column field='Adjusted_Baseline' headerText='Adjusted_Baseline' textAlign='center'></e-column>
+      <e-column field='Actual_consumption' headerText='Actual_consumption' textAlign='center'></e-column>
+      <e-column field='Energy_saved' headerText='Energy_saved' textAlign='center'></e-column>
+      <e-column field='Column18' headerText='Column18' textAlign='center'></e-column>
+      <e-column field='Latitude' headerText='Latitude' textAlign='center'></e-column>
+      <e-column field='Longitude' headerText='Longitude' textAlign='center'></e-column>
+      <e-column field='Status2' headerText='Status2' textAlign='center'></e-column>
+    </e-columns>
+
+  </ejs-grid>
+</div>
+
+
+

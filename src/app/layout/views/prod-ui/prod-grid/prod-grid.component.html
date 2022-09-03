@@ -1,0 +1,29 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-8">
+    <h2>Production Report</h2>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <strong>Grid</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+<ejs-grid #grid [dataSource]='data'height=760 [toolbar]='toolbarOptions' [showColumnChooser]='true'
+[allowPaging]="true" [allowSorting]="true" [allowFiltering]="true" [allowGrouping]="true"
+[pageSettings]='pageSettings' (dataBound)='dataBound()' [allowResizing]='true' (toolbarClick)='toolbarClick($event)'>
+  <e-columns>
+    <e-column field='LampCode' headerText='Lamp Code' textAlign='Left'></e-column>
+    <e-column field='Id' headerText='Id' textAlign='Left'></e-column>
+    <e-column field='DriverCode' headerText='DriverCode' textAlign='Left'></e-column>
+    <e-column field='CreatedBy' headerText='CreatedBy' textAlign='Left'></e-column>
+    <e-column field='CreatedDate' headerText='CreatedDate' textAlign='Left'></e-column>
+    <e-column field='ChipAssembleBy' headerText='ChipAssembleBy' textAlign='Left' width='80'></e-column>
+    <e-column field='DriverAssembleBy' headerText='DriverAssembleBy' textAlign='Left'></e-column>
+    <e-column field='LensAssembleBy' headerText='LensAssembleBy' textAlign='Left'></e-column>
+    <e-column field='PolyCarbonateAssembledBy' headerText='PolyCarbonateAssembledBy' textAlign='Left'></e-column>
+    <e-column field='SerialNoTrackingBy' headerText='SerialNoTrackingBy' textAlign='Left'></e-column>
+  </e-columns>
+</ejs-grid>

@@ -1,0 +1,25 @@
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+      <div>
+        <h1 style="font-size: 110px" class="logo-name">ILT</h1>
+      </div>
+      <h3>Illuminato Lighting Technology</h3>
+      <form class="m-t" role="form">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control"  [(ngModel)]="password" name="Password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+        <div>
+          <div id="animation_text" class="animated shake">
+            <p class="text-danger">Please Enter Valid UserName/Password</p>
+          </div>
+        </div>  
+      </form>
+      <p class="m-t">
+        <small>ILT Production V0.0.1 &copy;  2020</small>
+      </p>
+    </div>
+  </div>

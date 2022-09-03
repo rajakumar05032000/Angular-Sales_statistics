@@ -1,0 +1,100 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Production Report</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Grid</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<ejs-grid #grid [dataSource]='data' height=760 [toolbar]='toolbarOptions' 
+    [allowPaging]="true" [allowSorting]="true"  [allowGrouping]="true"
+    [pageSettings]='pageSettings' [editSettings]='editSettings'  [allowResizing]='true'(actionBegin)='actionBegin($event)' (actionComplete)='actionComplete($event)'>
+    <e-columns>
+        <e-column field='TypeName' headerText='TypeName' textAlign='Left'></e-column>
+        <e-column field='LampCodeRange' headerText='LampCodeRange' textAlign='Left'></e-column>
+        <e-column field='TypeCode' headerText='TypeCode' textAlign='Left'></e-column>
+        <e-column field='DriverCodeLength' headerText='DriverCodeLength' textAlign='Left'></e-column>
+        <e-column field='LampCodeLength' headerText='LampCodeLength' textAlign='Left'></e-column>
+        <e-column field='WattageRangeMin' headerText='WattageRangeMin' textAlign='Left'></e-column>
+        <e-column field='WattageRangeMax' headerText='WattageRangeMax' textAlign='Left'></e-column>
+        <e-column field='VoltageRange' headerText='VoltageRange' textAlign='Left'></e-column>
+        <e-column field='CurrentRange' headerText='CurrentRange' textAlign='Left'></e-column>
+        <e-column field='VoltageMax' headerText='VoltageMax' textAlign='Left'></e-column>
+        <e-column field='VoltageMin' headerText='VoltageMin' textAlign='Left'></e-column>
+        <e-column field='CurrentMax' headerText='CurrentMax' textAlign='Left'></e-column>
+        <e-column field='CurrentMin' headerText='CurrentMin' textAlign='Left'></e-column>
+        <e-column field='Process' headerText='Process' textAlign='Left'></e-column>
+    </e-columns>
+    <ng-template #editSettingsTemplate let-data>
+        <div [formGroup]="LampTypeMasterForm">
+            <table class="e-table e-inline-edit" cellspacing="0.25">
+                <tbody>
+                    <tr>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="TypeName" type="text" name='TypeName'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="LampCodeRange" type="text" name='LampCodeRange'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="TypeCode" type="text" name='TypeCode'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="DriverCodeLength" type="text" name='DriverCodeLength'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="LampCodeLength" type="text" name='LampCodeLength'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="WattageRangeMin" type="text" name='WattageRangeMin'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="WattageRangeMax" type="text" name='WattageRangeMax'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="VoltageRange" type="text" name='VoltageRange'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="CurrentRange" type="text" name='CurrentRange'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="VoltageMax" type="text" name='VoltageMax'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="VoltageMin" type="text" name='VoltageMin'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="CurrentMax" type="text" name='CurrentMax'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="CurrentMin" type="text" name='CurrentMin'
+                                style="text-align: right">
+                        </td>
+                        <td class='e-rowcell'>
+                            <input class="e-input e-field" formControlName="Process" type="text" name='Process'
+                                style="text-align: right">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+</ejs-grid>
+<button type="submit" (click)='onCreate()' class="btn btn-primary block m-b">Submit</button>
